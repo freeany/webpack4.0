@@ -103,7 +103,12 @@ module.exports = {
                             publicPath: '../',
                         }
                     },
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 2
+                        }
+                    },
                     'postcss-loader'
                 ]
             },
@@ -173,9 +178,9 @@ module.exports = {
             DEV: JSON.stringify('devccccc')
         }),
         new webpack.IgnorePlugin(/\.\/local/, /moment/),  // 代表如果在moment中发现引入了.local则忽略掉不去引入，我们在入口文件中手动引入
-        new webpack.DllReferencePlugin({
-            manifest: path.resolve(__dirname, 'dll', 'manifest.json')
-        })
+        // new webpack.DllReferencePlugin({
+        //     manifest: path.resolve(__dirname, 'dll', 'manifest.json')
+        // })
         // new webpack.ProvidePlugin({   // 给每个模块中都注入$
         //     $: 'jquery'
         // })

@@ -719,3 +719,17 @@ console.log(d)
 
 - 抽离的是多入口文件的代码， 把多个入口文件的公共部分抽离出来。
 
+
+
+
+
+
+
+## 99. 高级
+
+- webpack-dev-server 也是一个集成好的命令行工具，内部是一个express服务器。
+- 使用webpack-dev-server看到控制台打印的日志，可以看到running 的地址和端口，output的路径，webpack-dev-server可以访问的静态资源的路径(通过devServer的contentbase设置)，contentbase设置的路径中的文件，通过webpack-dev-server启动的服务可以获取到
+- webpack-dev-server也可以启动gzip压缩
+- use  的值可以是一个字符串， 数组  ， 对象
+  - 数组的语法: use: [ {loader: 'xxx', options: {...} } ]
+- 解析单独的css、less、sass等预处理器用css-loader，style-loader即可解析。那么如果在css中使用@import语法引入.less文件，那么将不会去解析less语法。

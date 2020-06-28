@@ -33,7 +33,7 @@ console.log(fff);
 
 class Q {
     constructor() {
-        console.lg('aaa')
+        // console.lg('aaa')
     }
 }
 new Q()
